@@ -1,9 +1,12 @@
-import { PetCadastro } from "./Components/PetCadastro/PetCadastro";
+import React from "react";
+import ListaPet from "./Components/ListaPet/ListaPet";
+
+
 function App() {
   return (
     <div>
       <h1>App</h1>
-      <PetCadastro />
+      <ListaPet/>
     </div>
   );
 }
