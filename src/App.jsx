@@ -1,14 +1,12 @@
-import React from "react";
-import ListaPet from "./Components/ListaPet/ListaPet";
+import { PetCadastro } from "./Components/PetCadastro/PetCadastro"
 
-
-function App() {
-  return (
+function App () {
+  return(
     <div>
-      <h1>App</h1>
-      <ListaPet/>
+      App
+      <PetCadastro />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
