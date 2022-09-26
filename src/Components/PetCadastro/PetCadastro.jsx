@@ -2,6 +2,9 @@ import { useState } from "react";
 import { PetFicha } from "../PetFicha/PetFicha";
 import { PetForm } from "../PetForm/PetForm";
 
+import {Container} from "./styled";
+
+
 export const PetCadastro = () =>{
 
     const [ficha, setFicha] = useState([])
@@ -22,9 +25,10 @@ export const PetCadastro = () =>{
 
         return (
         <>
-            <hr />
+        
             <PetForm addFicha={addFicha} />
-            {ficha.map((note, index) => (
+            <Container>
+              {ficha.map((note, index) => (
                 <PetFicha 
                     key={index}
                     id={index}
@@ -36,9 +40,10 @@ export const PetCadastro = () =>{
                     tutorPhone = {note.tutorPhone}
                     petImage = {note.petImage}
                     observations = {note.observations}  
-                    onDelete={deleteFicha}             
+                    onDelete={deleteFicha}
                 />
-            ))}
+                ))}
+              </Container>
         </>
-      );
+    )
 }

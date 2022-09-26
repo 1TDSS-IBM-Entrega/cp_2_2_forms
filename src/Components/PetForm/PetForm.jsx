@@ -53,19 +53,21 @@ export const PetForm = ({addFicha}) => {
                     <Input type='text' id='tamanho' value={petSize} onChange={e => setPetSize(e.target.value)} autoComplete="none" required />
                 </div>
                 <div >
-                    <Label>Nome do Dono</Label>
+                    <Label>Dono</Label>
                     <Input type='text' id='nomeDono' value={tutorName} onChange={e => setTutorName(e.target.value)} autoComplete="none" required />
                 </div>
                 <div >
-                    <Label>Telefone do Dono</Label>
+                    <Label>Tel. Dono</Label>
                     <Input type='tel' id='nomeDono'  value={tutorPhone} onChange={e => setTutorPhone(e.target.value)} autoComplete="none" required />
                 </div>
                 <div>
-                    <Label>Imagem do Pet</Label>
+                    <Label>Foto Pet</Label>
                     <Input type='text' id='imagemPet' placeholder="url" value={petImage} onChange={e => setPetImage(e.target.value)} autoComplete="none" required />
                 </div>
-                <Label >Observações</Label>
-                <TextArea type='text' id='obs' value={observations} onChange={e => setObservations(e.target.value)} autoComplete="none" required />
+                <div>
+                </div>
+                    <Label>Obs.</Label>
+                    <TextArea type='text' id='obs' value={observations} onChange={e => setObservations(e.target.value)} autoComplete="none" required />
                 <Button>Submit</Button>
             </FormPet>
         </>

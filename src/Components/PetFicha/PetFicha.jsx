@@ -1,20 +1,21 @@
+import { Div, H2, Button, IMG, P,SPAN, SPAN2 } from "./styled"
 
 export const PetFicha = ({id, name, age, size, breed, tutorName, tutorPhone, petImage, observations, onDelete}) => {
     console.log(id)
     return (
         <>       
-            <div>
-                <h2>Nome do Pet {name}</h2>
-                <p>Idade do Pet {age}</p>
-                <p>Tamanho do Pet {size}</p>
-                <p>Raça do Pet {breed}</p>
-                <p>Nome do Dono{tutorName}</p>
-                <p>Telefone do Dono{tutorPhone}</p>
-                <img src={petImage} alt="imagem do pet" width={100} height={100} />
-                <p>Observações {observations}</p>
+            <Div>
+                <P>Nome do Pet <SPAN>{name}</SPAN></P>
+                <P>Idade do Pet <SPAN2>{age}</SPAN2> </P>
+                <P>Tamanho do Pet <SPAN2>{size}</SPAN2></P>
+                <P>Raça do Pet <SPAN2>{breed}</SPAN2></P>
+                <P>Nome do Dono <SPAN2>{tutorName}</SPAN2></P>
+                <P>Telefone do Dono <SPAN2>{tutorPhone}</SPAN2></P>
+                <IMG src={petImage} alt="imagem do pet" />
+                <P>Observações <SPAN2>{observations}</SPAN2> </P>
                 {/* button delete */}
-                <button type="button" onClick={() => onDelete(id)}>Delete</button>
-            </div>
+                <Button type="button" onClick={() => onDelete(id)}>Delete</Button>
+            </Div>
         </>    
     )
 }
