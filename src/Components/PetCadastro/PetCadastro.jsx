@@ -6,9 +6,9 @@ export const PetCadastro = () =>{
 
     const [ficha, setFicha] = useState([])
 
-    const addFicha = (dataFicha) => {
+    const addFicha = (petName, petAge,petSize, petBreed, tutorName, tutorPhone, petImage, observations) => {
         setFicha((prevFicha) => {
-          return [...prevFicha, dataFicha];
+          return [...prevFicha, {name: petName, age: petAge, size: petSize, breed: petBreed, tutorName: tutorName, tutorPhone: tutorPhone, petImage: petImage, observations: observations}];
         });
       };
 
@@ -17,7 +17,19 @@ export const PetCadastro = () =>{
             <hr />
             <PetForm addFicha={addFicha} />
             <hr />
-            <PetFicha props={ficha} />
+            {ficha.map((note, index) => (
+                <PetFicha 
+                    key={index}
+                    name = {note.name}
+                    age = {note.age}
+                    size = {note.size}
+                    breed = {note.breed}
+                    tutorName = {note.tutorName}
+                    tutorPhone = {note.tutorPhone}
+                    petImage = {note.petImage}
+                    observations = {note.observations}               
+                />
+            ))}
         </>
       );
 }
