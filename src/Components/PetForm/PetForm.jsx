@@ -11,17 +11,7 @@ export const PetForm = ({addFicha}) => {
     const [petImage , setPetImage] = useState('')
     const [observations , setObservations] = useState('')
 
-    const formSubmissionHandler = (e) =>{
-        e.preventDefault()
-
-
-        // Possivel verificação de inputs
-        // if (title.trim().length === 0 || content.trim().length === 0) {
-        //     return;  
-        // }
-
-        addFicha(petName, petAge, petSize, petBreed, tutorName, tutorPhone, petImage, observations)
-
+    const emptyFields = () => {
         setPetName('')
         setPetAge('')
         setPetSize('')
@@ -30,6 +20,15 @@ export const PetForm = ({addFicha}) => {
         setTutorPhone('')
         setPetImage('')
         setObservations('')
+    }
+    
+
+    const formSubmissionHandler = (e) =>{
+        e.preventDefault()
+
+        addFicha(petName, petAge, petSize, petBreed, tutorName, tutorPhone, petImage, observations)
+        
+        emptyFields()
     }
 
     return (

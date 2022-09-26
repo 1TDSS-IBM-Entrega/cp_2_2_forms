@@ -12,6 +12,11 @@ export const PetCadastro = () =>{
         });
       };
 
+      const onDeleteFicha = (id) => {
+        setFicha((prevFicha) => {
+          return [...prevFicha.filter((index) => index !== id)]
+        });
+      }
     return (
         <>
             <hr />
@@ -20,6 +25,7 @@ export const PetCadastro = () =>{
             {ficha.map((note, index) => (
                 <PetFicha 
                     key={index}
+                    id={index}
                     name = {note.name}
                     age = {note.age}
                     size = {note.size}
@@ -27,7 +33,8 @@ export const PetCadastro = () =>{
                     tutorName = {note.tutorName}
                     tutorPhone = {note.tutorPhone}
                     petImage = {note.petImage}
-                    observations = {note.observations}               
+                    observations = {note.observations}  
+                    onDelete={onDeleteFicha}             
                 />
             ))}
         </>

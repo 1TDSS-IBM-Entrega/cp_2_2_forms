@@ -1,5 +1,5 @@
 
-export const PetFicha = ({name, age, size, breed, tutorName, tutorPhone, petImage, observations}) => {
+export const PetFicha = ({id, name, age, size, breed, tutorName, tutorPhone, petImage, observations, onDeleteFicha}) => {
     console.log(petImage)
     return (
         <>       
@@ -12,6 +12,7 @@ export const PetFicha = ({name, age, size, breed, tutorName, tutorPhone, petImag
                 <p>Telefone do Dono{tutorPhone}</p>
                 <img src={petImage} alt="imagem do pet" width={100} height={100} />
                 <p>Observações {observations}</p>
+                <button onClick={() => onDeleteFicha(id)}>Apagar</button>
             </div>
         </>    
     )
