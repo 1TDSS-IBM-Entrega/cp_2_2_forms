@@ -14,6 +14,12 @@ export const PetForm = ({addFicha}) => {
     const formSubmissionHandler = (e) =>{
         e.preventDefault()
 
+
+        // Possivel verificação de inputs
+        // if (title.trim().length === 0 || content.trim().length === 0) {
+        //     return;  
+        // }
+
         addFicha(petName, petAge, petSize, petBreed, tutorName, tutorPhone, petImage, observations)
 
         setPetName('')
