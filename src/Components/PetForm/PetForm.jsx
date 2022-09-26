@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { FormPet, Input, Button, Label, TextArea } from "./styled";
+
 export const PetForm = ({addFicha}) => {
 
     const [petName , setPetName] = useState('')
@@ -22,7 +24,6 @@ export const PetForm = ({addFicha}) => {
         setObservations('')
     }
     
-
     const formSubmissionHandler = (e) =>{
         e.preventDefault()
 
@@ -33,43 +34,40 @@ export const PetForm = ({addFicha}) => {
 
     return (
         <>
-            <form onSubmit={formSubmissionHandler}>
+
+            <FormPet onSubmit={formSubmissionHandler}>
                 <div >
-                    <label>Nome</label>
-                    <input type='text' id='name' value={petName} onChange={e => setPetName(e.target.value)} autoComplete="none" required />
+                    <Label>Nome</Label>
+                    <Input type='text' id='name' value={petName} onChange={e => setPetName(e.target.value)} autoComplete="none" required />
                 </div>
                 <div>
-                    <label>Idade</label>
-                    <input type='number' id='age' value={petAge} onChange={e => setPetAge(e.target.value)} autoComplete="none" required />
+                    <Label>Idade</Label>
+                    <Input type='number' id='age' value={petAge} onChange={e => setPetAge(e.target.value)} autoComplete="none" required />
                 </div>
                 <div>
-                    <label>Raça</label>
-                    <input type='text' id='raca' value={petBreed} onChange={e => setPetBreed(e.target.value)} autoComplete="none" required />
+                    <Label>Raça</Label>
+                    <Input type='text' id='raca' value={petBreed} onChange={e => setPetBreed(e.target.value)} autoComplete="none" required />
                 </div>
                 <div >
-                    <label>Tamanho</label>
-                    <input type='text' id='tamanho' value={petSize} onChange={e => setPetSize(e.target.value)} autoComplete="none" required />
+                    <Label>Tamanho</Label>
+                    <Input type='text' id='tamanho' value={petSize} onChange={e => setPetSize(e.target.value)} autoComplete="none" required />
                 </div>
                 <div >
-                    <label>Nome do Dono</label>
-                    <input type='text' id='nomeDono' value={tutorName} onChange={e => setTutorName(e.target.value)} autoComplete="none" required />
+                    <Label>Nome do Dono</Label>
+                    <Input type='text' id='nomeDono' value={tutorName} onChange={e => setTutorName(e.target.value)} autoComplete="none" required />
                 </div>
                 <div >
-                    <label>Telefone do Dono</label>
-                    <input type='tel' id='nomeDono'  value={tutorPhone} onChange={e => setTutorPhone(e.target.value)} autoComplete="none" required />
+                    <Label>Telefone do Dono</Label>
+                    <Input type='tel' id='nomeDono'  value={tutorPhone} onChange={e => setTutorPhone(e.target.value)} autoComplete="none" required />
                 </div>
                 <div>
-                    <label>Imagem do Pet</label>
-                    <input type='text' id='imagemPet' value={petImage} onChange={e => setPetImage(e.target.value)} autoComplete="none" required />
+                    <Label>Imagem do Pet</Label>
+                    <Input type='text' id='imagemPet' placeholder="url" value={petImage} onChange={e => setPetImage(e.target.value)} autoComplete="none" required />
                 </div>
-                <div >
-                    <label >Observações</label>
-                    <textarea type='text' id='obs' value={observations} onChange={e => setObservations(e.target.value)} autoComplete="none" required />
-                </div>
-                <div>
-                    <button>Submit</button>
-                </div>
-            </form>
+                <Label >Observações</Label>
+                <TextArea type='text' id='obs' value={observations} onChange={e => setObservations(e.target.value)} autoComplete="none" required />
+                <Button>Submit</Button>
+            </FormPet>
         </>
       );    
 }

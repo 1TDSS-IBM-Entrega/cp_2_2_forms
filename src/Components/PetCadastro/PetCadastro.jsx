@@ -12,16 +12,18 @@ export const PetCadastro = () =>{
         });
       };
 
-      const onDeleteFicha = (id) => {
+    const deleteFicha = (id) => {
         setFicha((prevFicha) => {
-          return [...prevFicha.filter((index) => index !== id)]
+          return prevFicha.filter((ficha, index) => {
+            return index !== id;
+          });
         });
-      }
-    return (
+      };
+
+        return (
         <>
             <hr />
             <PetForm addFicha={addFicha} />
-            <hr />
             {ficha.map((note, index) => (
                 <PetFicha 
                     key={index}
@@ -34,7 +36,7 @@ export const PetCadastro = () =>{
                     tutorPhone = {note.tutorPhone}
                     petImage = {note.petImage}
                     observations = {note.observations}  
-                    onDelete={onDeleteFicha}             
+                    onDelete={deleteFicha}             
                 />
             ))}
         </>
